@@ -22,7 +22,7 @@ export default {
 		},
 	],
 	async call(this: IExecuteFunctions, index: number): Promise<IDataObject> {
-		const data = this.getNodeParameter('data', index) as IDataObject;
+		const data = this.getNodeParameter('data', index) as any;
 		const nonce = this.getNodeParameter('nonce', index) as string;
 		const timestamp = parseInt(Date.now() / 1000 + '');
 
@@ -30,9 +30,12 @@ export default {
 		const aesKey = credential.aesKey as string;
 		const token = credential.token as string;
 
+		// @ts-ignore
+		const encryptStr: string = (data instanceof String) ? data : JSON.stringify(data);
+
 		// 生成16位长的随机字符串 7bfa1b71134f023a  1756823252831000
-		const random = '7bfa1b71134f023a';
-		const encryptMsg = WecomRobotUtils.encrypt(aesKey, JSON.stringify(data), nonce, random);
+		const random = Date.now() + '000';
+		const encryptMsg = WecomRobotUtils.encrypt(aesKey, encryptStr, nonce, random);
 
 		return {
 			encrypt: encryptMsg,

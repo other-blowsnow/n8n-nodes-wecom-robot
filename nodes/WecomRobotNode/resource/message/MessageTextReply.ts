@@ -73,14 +73,20 @@ export default {
 
 		await Promise.all(promises);
 
-		return {
+
+		let data: any = {
 			msgtype: 'stream',
 			stream: {
 				id: 'STREAMID',
 				finish: true,
 				content: content,
-				msg_item: images,
 			},
-		};
+		}
+
+		if (images.length > 0) {
+			data.stream.msg_item = images
+		}
+
+		return data;
 	},
 } as ResourceOperations;
