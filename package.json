@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-wecom-robot",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "wecom robot node",
   "keywords": [
     "n8n-community-node-package",
@@ -37,7 +37,7 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/WecomRobotNodeCredentialsApi.credentials.js"
+      "dist/credentials/WecomRobotCredentialsApi.credentials.js"
     ],
     "nodes": [
       "dist/nodes/WecomRobotNode/WecomRobotNode.node.js"
