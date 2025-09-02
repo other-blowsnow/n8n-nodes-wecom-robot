@@ -30,8 +30,8 @@ export default {
 		const aesKey = credential.aesKey as string;
 		const token = credential.token as string;
 
-		// 生成16位长的随机字符串
-		const random = Date.now() + '000';
+		// 生成16位长的随机字符串 7bfa1b71134f023a  1756823252831000
+		const random = '7bfa1b71134f023a';
 		const encryptMsg = WecomRobotUtils.encrypt(aesKey, JSON.stringify(data), nonce, random);
 
 		return {
