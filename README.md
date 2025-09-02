@@ -1,4 +1,5 @@
 # 企业微信智能机器人对接
+https://developer.work.weixin.qq.com/document/path/101039
 
 ## 签名
 - 消息加密
