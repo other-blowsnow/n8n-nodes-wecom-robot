@@ -7,7 +7,7 @@ export default {
 	value: 'sign:encrypt',
 	options: [
 		{
-			displayName: '*加密数据',
+			displayName: '*加密消息(JSON)',
 			name: 'data',
 			default: '',
 			type: 'json',
@@ -31,7 +31,7 @@ export default {
 		const token = credential.token as string;
 
 		// @ts-ignore
-		const encryptStr: string = (data instanceof String) ? data : JSON.stringify(data);
+		const encryptStr: string = typeof data? JSON.stringify(JSON.parse(data)) : JSON.stringify(data);
 
 		// 生成16位长的随机字符串 7bfa1b71134f023a  1756823252831000
 		const random = Date.now() + '000';

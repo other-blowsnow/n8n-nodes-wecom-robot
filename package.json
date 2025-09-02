@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-wecom-robot",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "wecom robot node",
   "keywords": [
     "n8n-community-node-package",
